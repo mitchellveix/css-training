@@ -5,27 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style type="text/css">
-        .box {
+        .flex-container {
             display: flex;
+            flex-wrap: wrap;
+            background-color: aqua;
+            padding: 30px;
+            width: 70%;
+            margin: auto;
+            justify-content: center;
+        }
+        .flex-box {
             width: 100px;
             height: 100px;
             background-color: blue;
-            flex-wrap: nowrap;
+            margin: 20px;
         }
-        .flex-container {
-            background-color: aqua;
+        .grid-container {
+            display: grid;
+            grid-template-columns: auto auto;
+            background-color: green;
+            padding: 20px;
+            width: 70%;
+            margin: auto;
+            gap: 20px;
+        }
+        .grid-box {
+            background-color: lightgreen;
             padding: 30px;
         }
+
+        .grid1 {grid-area: header;}
+        .grid2 {grid-area: menu;}
+        .grid3 {grid-area: main;}
+        .grid4 {grid-area: right;}
+        .grid5 {grid-area: footer;}
+        .gridlayout-container {
+            display: grid;
+            grid-template-areas:
+                'header header header header header header'
+                'menu main main main right right'
+                'menu footer footer footer footer footer';
+            gap: 10px;
+            padding: 20px;
+            background-color: purple;
+            width: 70%;
+            margin: auto;
+        }
+        .gridlayout-container > div {
+            background-color: lightpink;
+            padding: 20px;
+        }
+        
     </style>
 </head>
 <body>
     <h1>Flex</h1>
     <div class="flex-container">
-        <div class="box">1</div>
-        <div class="box">2</div>
-        <div class="box">3</div>
-        <div class="box">4</div>
-        <div class="box">5</div>
+        <div class="flex-box">1</div>
+        <div class="flex-box">2</div>
+        <div class="flex-box">3</div>
+        <div class="flex-box">4</div>
+        <div class="flex-box">5</div>
+    </div>
+    <h1>Grid</h1>
+    <div class="grid-container">
+        <div class="grid-box">1</div>
+        <div class="grid-box">2</div>
+        <div class="grid-box">3</div>
+        <div class="grid-box">4</div>
+        <div class="grid-box">5</div>
+    </div>
+    <h1>Grid Layout</h1>
+    <div class="gridlayout-container">
+        <div class="grid1">Header</div>
+        <div class="grid2">Menu</div>
+        <div class="grid3">Main</div>
+        <div class="grid4">Right</div>
+        <div class="grid5">Footer</div>
     </div>
 </body>
 </html>
